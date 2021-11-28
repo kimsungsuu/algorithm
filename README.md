@@ -9,3 +9,5 @@
 ## Today(2021.11.27) learned ArrayVerifyDuplicate and created with Java!! 👍
 
 ## Today(2021.11.27) learned ArraySubstitution and created with Java!! 👍
+
+## Today(2021.11.28) learned ArrayUrlEncoding and created with Java!! 👍
