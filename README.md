@@ -12,4 +12,4 @@
 
 ## Today(2021.11.28) learned ArrayUrlEncoding and created with Java!! 👍
 
-## Today(2022.01.20) learned greedy and created with Java!! 👍
+## Today(2022.01.20) learned greedy and created with Java!!
