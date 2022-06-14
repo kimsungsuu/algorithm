@@ -22,3 +22,8 @@
     - https://www.inflearn.com/course/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B0%95%EC%A2%8C/dashboard
   - 처음 알고리즘 공부 시작할 때 팁
     - https://plzrun.tistory.com/entry/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4PS-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0
+
+# 2022.6.14
+- 백준 입출력 문제 공부
+- StringTokenizer를 이용해 공백을 인식, 덧셈 입출력 문제 해결
+- 
