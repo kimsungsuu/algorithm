@@ -29,4 +29,5 @@
 
 # 2022.6.15
 - BufferedReader를 이용한 덧셈 출력, StringTokenizer를 이용해 공백 인식, 자바 출력의 기본 양식 공부.
-- 
+- getBytes()를 이용하여 입력받은 문자열을 byte배열로 변환해주어 값을 더해주었다.
+- substring()를 이용한 문자열 
