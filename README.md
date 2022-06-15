@@ -28,4 +28,5 @@
 - StringTokenizer를 이용해 공백을 인식, 덧셈 입출력 문제 해결
 
 # 2022.6.15
+- BufferedReader를 이용한 덧셈 출력, StringTokenizer를 이용해 공백 인식, 자바 출력의 기본 양식 공부.
 - 
