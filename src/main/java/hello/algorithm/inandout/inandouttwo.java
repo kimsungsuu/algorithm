@@ -1,4 +1,4 @@
-package hello.algorithm;
+package hello.algorithm.inandout;
 import java.io.*;
 
 public class inandouttwo {
