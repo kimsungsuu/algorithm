@@ -10,13 +10,15 @@ public class InAndOutFive {
             int n = Integer.parseInt(br.readLine());
 
             for(int i = 0; i < n; i++){
-                for(int j = 1; j<=n; j++){
-                    System.out.print("*");
-                    for(int k = 0; k <= i; k++){
-                        System.out.print(" ");
-                    }
-
+                for(int k = 0; k < i; k++){
+                    System.out.print(" ");
                 }
+
+                for(int j = 1+i; j<=n; j++) {
+                    System.out.print("*");
+                }
+
+
                 System.out.println();
             }
 
