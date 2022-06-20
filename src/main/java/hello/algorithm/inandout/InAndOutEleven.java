@@ -4,16 +4,19 @@ import java.io.*;
 public class InAndOutEleven {
     public static void main(String[] args)throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuffer sb = new StringBuffer();
 
         int n = Integer.parseInt(br.readLine());
 
         for(int i = 1; i <= n-1; i++){
             //앞부분 공백
             for(int j = 1; j <= n-i; j++){
-                System.out.print(" ");
+                sb.append(" ");
+//                System.out.print(" ");
             }
             for(int k = 1; k <= 1; k++ ){
-                System.out.print("*");
+                sb.append("*");
+//                System.out.print("*");
             }
             //i가 2이상 일때부터 공백과 뒷부분 *적용
             if(i>=2) {
