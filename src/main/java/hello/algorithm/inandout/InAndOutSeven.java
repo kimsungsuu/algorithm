@@ -7,7 +7,7 @@ public class InAndOutSeven {
 
         int n = Integer.parseInt(br.readLine());
 
-        //잘바꿈은 5개, *은 i개만큼, 공백은 (2*n)-(2*i)만큼, 공백 후에 다시 * i개 만큼
+        //줄바꿈은 5개, *은 i개만큼, 공백은 (2*n)-(2*i)만큼, 공백 후에 다시 * i개 만큼
         for(int i =1; i <= n; i++){
             for(int j = 1; j <= i; j++){
                 System.out.print("*");
