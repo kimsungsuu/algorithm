@@ -34,7 +34,7 @@
 
 # 2022.6.21
 - Dynamic Programming에서 N을 1로 만드는 최솟값을 구하는 문제를 해결할 때
-  - recursion을 사용하는 방법 또는 수를 따로 저장하지 않고 count에 담아 출력하는 방법 두가지가 있다.
-    - recursion을 사용했을 시에는 dp 배열을 생성하고, Math.min을 사용하여 최솟값을 구하는 방법을 사용할 수 있다.
+  - recursion memoization을 사용하는 방법 또는 수를 따로 저장하지 않고 count에 담아 출력하는 방법 두가지가 있다.
+    - recursion memoization을 사용했을 시에는 dp 배열을 생성하고, Math.min을 사용하여 최솟값을 구하는 방법을 사용할 수 있다.
     - count에 담는 경우엔 입력한 Math.min과 (N/2, count + 1 + (N%2)) 공식을 사용하여 해결할 수 있다.(자세한 내용은 DpOne 또는 DpAnotherOne을 참고.) 
     
