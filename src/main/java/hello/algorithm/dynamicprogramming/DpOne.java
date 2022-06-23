@@ -20,8 +20,6 @@ public class DpOne {
         dp[0]=dp[1]=0; //1을 찾는 알고리즘이므로 0이나 1일 때는 최솟값을 구하는 의미가 없기 때문에 선언
 
         System.out.println(rec(N));
-
-
     }
 
     static int rec(int N){
