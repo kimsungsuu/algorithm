@@ -38,3 +38,6 @@
     - recursion memoization을 사용했을 시에는 dp 배열을 생성하고, Math.min을 사용하여 최솟값을 구하는 방법을 사용할 수 있다.
     - count에 담는 경우엔 입력한 Math.min과 (N/2, count + 1 + (N%2)) 공식을 사용하여 해결할 수 있다.(자세한 내용은 DpOne 또는 DpAnotherOne을 참고.) 
     
+# 2022.6.23
+- DP 알고리즘에 대한 상세한 설명과 이해를 도와주는 블로그 https://hongjw1938.tistory.com/49
+  - DP 알고리즘의 해석, 문제에 적용 하는 방법이 수록되어있음.
