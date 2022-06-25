@@ -6,7 +6,6 @@ public class DpFour {
     public static void main(String[] args)throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
-
         dp = new int[11];
         dp[1] = 1;
         dp[2] = 2;
