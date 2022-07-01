@@ -32,23 +32,11 @@ public class DpTen {
             }
         }
 
-        /*
-        10 20 10 30 20 50
-            dp[2] = 1
-            dp[2] <= dp[1]
-            dp[2] = 2;
 
-            dp[3] = 1;
-            dp[4] = 1;
-            dp[4] <= dp[3]
-            dp[4] = dp[3] + 1;
-
-         */
-
-//        int max = 0;
-//        for(int n : dp){
-//            max = Math.max(max, i);
-//        }
+        int max = 0;
+        for(int i : dp){
+            max = Math.max(max, i);
+        }
 
         System.out.println(dp[n-1]);
             }
