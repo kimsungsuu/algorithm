@@ -17,12 +17,14 @@ public class DpTen {
 
         StringTokenizer st = new StringTokenizer(br.readLine());
 
+        //배열 값들 입력
         for(int i = 0; i < n; i++){
             arr[i] = Integer.parseInt(st.nextToken());
         }
 
         dp[0] = dp[1] =  1;
 
+        //문제의 알고리즘
         for(int i = 1; i<n; i++){
             dp[i] = 1;
             for(int j = 0; j < i; j++){
