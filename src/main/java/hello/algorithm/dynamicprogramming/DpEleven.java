@@ -3,6 +3,7 @@ import java.io.*;
 import java.util.StringTokenizer;
 
 public class DpEleven {
+
     static int arr[];
     static int dp[];
 
@@ -25,27 +26,22 @@ public class DpEleven {
 
 
         dp[1] = arr[1];
-        recur(N);
-        int max = 0;
-        for(int i = 1; i <= N; i++){
-            max = Math.max(max, dp[i]);
-        }
-        System.out.print(max);
 
-
-
-    }
-    public static int recur(int N){
-        if(dp[N] == 0){
-            dp[N] = arr[N];
-            for(int i = N-1; i >= 1; i--){
-                if(arr[i] < arr[N]){
-                    dp[N] = Math.max(recur(i) + arr[N], dp[N]);
-                }else{
-                    recur(i);
+        for(int i = 2; i <= N; i++ ){
+            dp[i] = arr[i];
+            for(int j = 1; j < i; j++){
+                if(arr[i] > arr[j]){
+                    dp[i] = Math.max(dp[j] + arr[i], dp[i]);
                 }
             }
         }
-        return dp[N];
+
+        int max = 0;
+        for(int i = 1; i <= N; i++){
+            if(dp[i] > max){
+                max = dp[i];
+            }
+        }
+        System.out.print(max);
     }
 }
