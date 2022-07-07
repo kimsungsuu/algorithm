@@ -2,6 +2,9 @@ package hello.algorithm.dynamicprogramming;
 import java.io.*;
 import java.util.StringTokenizer;
 
+/*
+백준 11055 가장 긴 증가하는 수열 DP
+ */
 public class DpEleven {
 
     static int arr[];
