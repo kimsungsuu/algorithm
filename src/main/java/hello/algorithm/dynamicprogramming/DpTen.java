@@ -22,7 +22,7 @@ public class DpTen {
             arr[i] = Integer.parseInt(st.nextToken());
         }
 
-        dp[0] = dp[1] =  1;
+        dp[0] =  1;
 
         //문제의 알고리즘
         for(int i = 1; i<n; i++){
@@ -30,8 +30,6 @@ public class DpTen {
             for(int j = 0; j < i; j++){
                 if(arr[j] < arr[i] && dp[i] <= dp[j]){
                     dp[i] = dp[j] + 1;
-                }else if(arr[i] == arr[j]){
-                    dp[i] = dp[j];
                 }
             }
         }
