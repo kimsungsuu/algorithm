@@ -20,7 +20,6 @@ public class Q7 {
             }else{
                 System.out.print(i + " = " + sum);
             }
-
         }
 
     }
