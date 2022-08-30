@@ -5,6 +5,7 @@ public class Q11 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        //long은 19자리 수 까지 입력 가능하다.
         long n = sc.nextLong();
 
         long a = n/10;
