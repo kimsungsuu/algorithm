@@ -7,7 +7,7 @@ public class Q8 {
         Scanner sc = new Scanner(System.in);
 
         int sum = 0;
-        int i;
+
 
         int n = sc.nextInt();
 
