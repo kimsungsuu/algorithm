@@ -1,4 +1,5 @@
 package ch01;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Q15 {
@@ -27,24 +28,23 @@ public class Q15 {
     }
     static void triangleRB(int n){
         for(int i = 1; i <= n; i++){
+            for(int j = 1; j <= n-i; j++){
+                System.out.print(" ");
+            }
             for(int j = 1; j <= i; j++){
-                for(int k = 1; k <= (n-i); k ++){
-                    System.out.print(" ");
-                }
                 System.out.print("*");
             }
             System.out.println();
         }
     }
 
+    //for(int j)가 두개 있어도 된다는걸 몰랐다....
     static void triangleRU(int n){
         for(int i = 1; i <= n; i++){
+            for(int j = 1; j <= i-1; j++){
+                System.out.print(" ");
+            }
             for(int j = i; j <= n; j++){
-                if(i >= 2){
-                    for(int k = j; k < i; k++){
-                        System.out.print(" ");
-                    }
-                }
                 System.out.print("*");
             }
             System.out.println();
