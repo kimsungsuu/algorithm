@@ -26,6 +26,11 @@ public class Q15 {
             System.out.println();
         }
     }
+
+    /*
+    * RB, RU는 for문의 특성을 제대로 이해하지 못해서 풀지 못했다.
+    * for문 안에 int j 방식을 두개를 따로 따로 만들어서 위 -> 아래로 실행되는 성질만 이해했어도 풀 수 있는 문제였다..
+    * */
     static void triangleRB(int n){
         for(int i = 1; i <= n; i++){
             for(int j = 1; j <= n-i; j++){
