@@ -94,6 +94,19 @@ for(int i = 0; i < 2; i++){
     ```
     - 결론적으로는 LIS의 알고리즘을 잘 이해하고 있어야 풀 수 있는 문제다
 
+# 2022.11.24
 
+> - str.toUpperCase();
+> - character.toUpperCase(t);
+> - for(char c : str.toCharArray())
+> - Character.isLowerCase(x);
+> - ASCII Code 
+>   - 대문자 : 65~90 
+>   - 소문자 : 97~122
+>   - 소문자 -> 대문자 str += (char)(x-32)
+>   - 대문자 -> 소문자 str += (char)(x+32)
+> - nextLine()
+> - String[] s = str.split(" ");
+> - int m = Integer.MIN_VALUE; 
 
  
