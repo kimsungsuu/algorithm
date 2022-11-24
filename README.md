@@ -100,5 +100,9 @@ for(int i = 0; i < 2; i++){
 > - character.toUpperCase(t);
 > - for(char c : str.toCharArray())
 > - Character.isLowerCase(x);
+> - ASCII Code 
+>   - 대문자 : 65~90, 소문자 : 97~122
+>   - 소문자 -> 대문자 str += (char)(x-32)
+>   - 대문자 -> 소문자 str += (char)(x+32)
 
  
