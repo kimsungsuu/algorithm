@@ -105,5 +105,8 @@ for(int i = 0; i < 2; i++){
 >   - 소문자 : 97~122
 >   - 소문자 -> 대문자 str += (char)(x-32)
 >   - 대문자 -> 소문자 str += (char)(x+32)
+> - nextLine()
+> - String[] s = str.split(" ");
+> - int m = Integer.MIN_VALUE; 
 
  
