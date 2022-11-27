@@ -9,8 +9,8 @@ public class One {
 
         str = str.toUpperCase();
         t = Character.toUpperCase(t);
-        for(int i = 0; i < str.length(); i++){
-            if(str.charAt(i)==t) answer++;
+        for(char c : str.toCharArray()){
+            if(c == t) answer++;
         }
 
         return answer;
