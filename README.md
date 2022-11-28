@@ -109,4 +109,9 @@ for(int i = 0; i < 2; i++){
 > - String[] s = str.split(" ");
 > - int m = Integer.MIN_VALUE; 
 
+
+# 2022.11.29
+
+> - indexOf()
+> - substring();
  
