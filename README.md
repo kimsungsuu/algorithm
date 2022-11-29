@@ -110,8 +110,13 @@ for(int i = 0; i < 2; i++){
 > - int m = Integer.MIN_VALUE; 
 
 
-# 2022.11.29
+# 2022.11.28
 
 > - indexOf()
 > - substring();
- 
+
+# 2022.11.29
+
+> - ArrayList<>
+> - StringBuilder().reverse().toString();
+>   - StringBuilder() 와 String 객체의 차이는 변경 유무 차이, String 객체는 변경 불가능 StringBuilder()는 변경 가능.
