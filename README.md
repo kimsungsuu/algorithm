@@ -116,7 +116,16 @@ for(int i = 0; i < 2; i++){
 > - substring();
 
 # 2022.11.29
-
+> - infren Algorithm 4~8
 > - ArrayList<>
 > - StringBuilder().reverse().toString();
 >   - StringBuilder() 와 String 객체의 차이는 변경 유무 차이, String 객체는 변경 불가능 StringBuilder()는 변경 가능.
+>     - 상세) String 객체는 변경할 시에 새로운 String 객체를 만들고 변경 이전의 String 객체는 Garbage Collector 담겨있다가 삭제되는 형식으로 메모리를 많이 차지하지만
+>     StringBuilder는 새로운 객체를 생성하지 않고 변경, 추가, 수정 등이 가능하다.
+> - String tmp = String.valueOf(s);
+>   - valueOf()는 Static으로 선언된 클래스 메소드.
+> - Character.isAlphabetic(s[lt]) or !Character.isAlphabetic(s[lt])  
+> - str.indexOf(str.charAt(i))
+> - str.equalsIgnoreCase(tmp)
+> - replaceAll()은 정규식 사용 가능, replace()는 불가능
+>   - str = str.toUpperCase().replace("[^A-Z]","");
