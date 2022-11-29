@@ -116,7 +116,7 @@ for(int i = 0; i < 2; i++){
 > - substring();
 
 # 2022.11.29
-
+> - infren Algorithm 4~6
 > - ArrayList<>
 > - StringBuilder().reverse().toString();
 >   - StringBuilder() 와 String 객체의 차이는 변경 유무 차이, String 객체는 변경 불가능 StringBuilder()는 변경 가능.
@@ -125,3 +125,4 @@ for(int i = 0; i < 2; i++){
 > - String tmp = String.valueOf(s);
 >   - valueOf()는 Static으로 선언된 클래스 메소드.
 > - Character.isAlphabetic(s[lt]) or !Character.isAlphabetic(s[lt])  
+> - str.indexOf(str.charAt(i))
