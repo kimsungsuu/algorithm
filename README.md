@@ -131,7 +131,7 @@ for(int i = 0; i < 2; i++){
 >   - str = str.toUpperCase().replace("[^A-Z]","");
 
 # 2022.11.30
-> - infren Algorithm 9 ~
+> - infren Algorithm 9 ~11
 > - ASCII CODE 48~57 : number0 ~ number9
 >   - if(x >= 48 && x <= 57)
 > - Character.isDisit(x)
