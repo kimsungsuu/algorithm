@@ -138,3 +138,9 @@ for(int i = 0; i < 2; i++){
 > - Math.min/ Math.max
 >   - Math.min(int a, int b) : a와 b 두 수중 더 작은 값을 반환하라. int b에 최댓값을 설정할 수 있음
 >   - Math.max(int a, int b) : a와 b 두 수중 더 큰 수를 반환하라. int a에 최솟값을 설정할 수 있음
+
+# 2022.12.01
+> - infren Algorithm 12 ~
+> - Integer.paserInt(string, 2) // 문자열로 저장된 이진수 값을 10진수로 변경하는 메소드
+>   - int tmp2 = Integer.parseInt(tmp,2);
+>   - answer += (char)(tmp2);
