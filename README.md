@@ -144,3 +144,7 @@ for(int i = 0; i < 2; i++){
 > - Integer.paserInt(string, 2) // 문자열로 저장된 이진수 값을 10진수로 변경하는 메소드
 >   - int tmp2 = Integer.parseInt(tmp,2);
 >   - answer += (char)(tmp2);
+
+# 2022.12.02
+> - infren Algorithm 1번~12 2번 다시 풀기
+> - indexOf(), split()
