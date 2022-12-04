@@ -1,12 +1,32 @@
 package codetest;
 
-public class ChangeTest {
-    public static void main(String[] args) {
-        int x = 88;
-        String a2 = Integer.toBinaryString(88);
-        System.out.println("a2 = " + a2);
+import java.util.Scanner;
 
-        int a2_2 = Integer.parseInt(a2,2);
-        System.out.println("a2_2 = " + a2_2);
+public class ChangeTest {
+
+
+    public String solution(String str){
+        String answer = "NO";
+
+        str = str.toUpperCase().replace("[^A-Z]","");
+
+        String tmp = new StringBuilder(str).reverse().toString();
+
+        if(str.equals(tmp)) answer = "YES";
+
+        System.out.println("tmp = " + tmp);
+        System.out.println("str = " + str);
+
+        return answer;
+    }
+
+    public static void main(String[] args){
+        ChangeTest T = new ChangeTest();
+        Scanner in=new Scanner(System.in);
+
+        String str = in.next();
+        System.out.println(T.solution(str));
     }
 }
+
+
