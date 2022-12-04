@@ -151,4 +151,5 @@ for(int i = 0; i < 2; i++){
 > - ArrayList<Integer>
 
 # 2022.12.04
-> - - infren Algorithm 5 ~ 12번 1회 다시 풀기, section 2 1번 다시 풀기 
+> - infren Algorithm 5 ~ 12번 1회 다시 풀기, section 2 1번 다시 풀기 , section2 2~5 풀기 및 복습
+> - 피보나치 수열, 에라토스테네 체(소수 출력)
