@@ -146,6 +146,9 @@ for(int i = 0; i < 2; i++){
 >   - answer += (char)(tmp2);
 
 # 2022.12.02
-> - infren Algorithm 1번~12 2번, 1~4번 1회 다시 풀기, section 2 1번 
+> - infren Algorithm 1번 ~ 12 2번, 1 ~ 4번 1회 다시 풀기, section 2 1번 
 > - indexOf(), split()
 > - ArrayList<Integer>
+
+# 2022.12.04
+> - - infren Algorithm 5 ~ 12번 1회 다시 풀기, section 2 1번 다시 풀기 
