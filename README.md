@@ -155,4 +155,8 @@ for(int i = 0; i < 2; i++){
 > - 피보나치 수열, 에라토스테네 체(소수 출력)
 
 # 2022.12.05
-> - infren Algorithm section02 5~ 
+> - infren Algorithm section02 5~7
+> - 복습 필요한 문제 : 6번 문제, 7번 문제(아직 못품)
+
+# 2022.12.06
+> - infren Algorithm section02 6~7 다시 풀기, 8~
