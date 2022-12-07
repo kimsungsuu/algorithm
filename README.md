@@ -160,3 +160,6 @@ for(int i = 0; i < 2; i++){
 
 # 2022.12.06
 > - infren Algorithm section02 5~7 복습, 8번 문제 공부
+  
+# 2022.12.07
+> - infren Algorithm section02 8 복습, 9~
