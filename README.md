@@ -163,3 +163,9 @@ for(int i = 0; i < 2; i++){
   
 # 2022.12.07
 > - infren Algorithm section02 8 복습, 9 ~ 10
+
+# 2022.12.08
+> - infren Algorithm section02 11 ~ 12, section01 1 ~ 6 (3회차 복습)
+
+# 2022.12.10
+> - infren Algorithm section01 7 ~ 12(3회차 복습), section02 1~11(1회차 복습)
