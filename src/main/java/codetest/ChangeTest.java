@@ -4,29 +4,48 @@ import java.util.Scanner;
 
 public class ChangeTest {
 
+        public int solution(int n, int[][] arr){
+            int answer = 0;
 
-    public String solution(String str){
-        String answer = "NO";
+            int min = Integer.MIN_VALUE;
+            int cnt;
 
-        str = str.toUpperCase().replace("[^A-Z]","");
+            for(int i = 0; i < n; i++){
+                cnt = 0;
+                for(int j = 0; j < n; j++){
+                    for(int k = 0; k < n; k++){
+                        if(arr[i][k] == arr[j][k]) {
+                            cnt++;
+                            break;
+                        }
+                    }
+                    if(cnt > min) {
+                        min = cnt;
+                        answer = i+1;
+                    }
+                }
+            }
+            return answer;
+        }
 
-        String tmp = new StringBuilder(str).reverse().toString();
+        public static void main(String[] args){
+            ChangeTest T = new ChangeTest();
+            Scanner in=new Scanner(System.in);
 
-        if(str.equals(tmp)) answer = "YES";
+            int n = in.nextInt();
+            int[][] arr = new int[n][n];
 
-        System.out.println("tmp = " + tmp);
-        System.out.println("str = " + str);
+            for(int i = 0; i < n; i++){
+                for(int j = 0; j < n; j++){
+                    arr[i][j] = in.nextInt();
+                }
+            }
 
-        return answer;
+            System.out.println(T.solution(n, arr));
+        }
     }
 
-    public static void main(String[] args){
-        ChangeTest T = new ChangeTest();
-        Scanner in=new Scanner(System.in);
 
-        String str = in.next();
-        System.out.println(T.solution(str));
-    }
-}
+
 
 
