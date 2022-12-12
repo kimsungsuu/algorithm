@@ -16,6 +16,7 @@ public class Main {
         int min = Integer.MIN_VALUE;
         int pi = 0;
         int pj = k;
+
         //arr[0]~ arr[k-1]까지 더한 값을 sum에 담아준다.
         for(int i = 0; i < k; i++){
             sum += arr[i];
