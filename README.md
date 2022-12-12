@@ -173,3 +173,7 @@ for(int i = 0; i < 2; i++){
 # 2022.12.11
 > - infren Algorithm section02 12(1회차 복습), section03 1 ~ 2
 > - Arrays.sort(a) // int[] a = new int[n] 
+
+# 2022.12.12
+> - infren Algorithm section03 3 ~ 
+> - O(n) 복잡도
