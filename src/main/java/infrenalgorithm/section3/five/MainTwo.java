@@ -2,6 +2,9 @@ package infrenalgorithm.section3.five;
 
 import java.util.Scanner;
 
+/**
+ * 수학 방식
+ */
 public class MainTwo {
 
     public int solution(int n) {
