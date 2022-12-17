@@ -187,4 +187,7 @@ for(int i = 0; i < 2; i++){
 # 2022.12.16
 > - infren Algorithm section03 2 ~ 6(1회차 복습)
 > - section02 1 ~ 10(2회차 복습)
+
+# 2022.12.17
+> - infren Algorithm section02 11 ~ (2회차 복습)
   
