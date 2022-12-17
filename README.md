@@ -189,5 +189,5 @@ for(int i = 0; i < 2; i++){
 > - section02 1 ~ 10(2회차 복습)
 
 # 2022.12.17
-> - infren Algorithm section02 11 ~ (2회차 복습)
+> - infren Algorithm section02 11 ~ 12(2회차 복습)
   
