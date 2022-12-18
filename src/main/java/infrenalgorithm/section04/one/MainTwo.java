@@ -1,21 +1,29 @@
-package codetest.changetest;
+package infrenalgorithm.section04.one;
 
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class Main {
+public class MainTwo {
     public char solution(int n, String str){
         char answer = ' ';
-
+        int max = 0;
         HashMap<Character, Integer> tmp = new HashMap<>();
 
-        System.out.println(tmp.containsKey('A'));
+        for(char t : str.toCharArray()){
+             tmp.put(t,tmp.getOrDefault(t,0)+1);
+        }
 
+        for(char key : tmp.keySet()){
+            if(tmp.get(key) > max){
+                max = tmp.get(key);
+                answer = key;
+            }
+        }
         return answer;
     }
 
     public static void main(String[] args) {
-        Main T = new Main();
+        MainTwo T = new MainTwo();
         Scanner in = new Scanner(System.in);
 
         int n = in.nextInt();
