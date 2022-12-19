@@ -191,3 +191,12 @@ for(int i = 0; i < 2; i++){
 # 2022.12.17
 > - infren Algorithm section02 11 ~ 12(2회차 복습)
   
+# 2022.12.19
+> - infren Algorithm section03 1
+>   - HashMap<Key,value> 
+>   - map.getOrDefault(x,0)
+>   - map.containsKey('A')
+>   - map.size()
+>   - map.remove('A')
+>   - map.get(key)
+>   - map.keySet()
