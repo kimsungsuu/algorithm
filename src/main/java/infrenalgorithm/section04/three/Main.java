@@ -26,7 +26,7 @@ public class Main {
             }
             lt++;
             answer.add(map.size());
-//            System.out.println(map);
+
         }
         return answer;
     }
