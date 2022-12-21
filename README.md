@@ -202,6 +202,10 @@ for(int i = 0; i < 2; i++){
 >   - map.keySet()
   
 # 2022.12.21
-> - infren Algorithm section03 4 ~ 
+> - infren Algorithm section03 4 ~ 5
 > - TreeSet
 >   - TreeSet<Integer> tSet = new TreeSet<>(Collections.reverseOrder());
+>   - tSet.remove(143);
+>   - tSet.size();
+>   - tSet.first();
+>   - tSet.last();  
