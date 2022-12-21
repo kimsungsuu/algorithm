@@ -192,7 +192,7 @@ for(int i = 0; i < 2; i++){
 > - infren Algorithm section02 11 ~ 12(2회차 복습)
   
 # 2022.12.19
-> - infren Algorithm section03 1 ~ 3
+> - infren Algorithm section04 1 ~ 3
 >   - HashMap<Key,value> 
 >   - map.getOrDefault(x,0)
 >   - map.containsKey('A')
@@ -202,7 +202,7 @@ for(int i = 0; i < 2; i++){
 >   - map.keySet()
   
 # 2022.12.21
-> - infren Algorithm section03 4 ~ 5
+> - infren Algorithm section04 4 ~ 5 section04 1 ~ 5 (1회차 복습)
 > - TreeSet
 >   - TreeSet<Integer> tSet = new TreeSet<>(Collections.reverseOrder());
 >   - tSet.remove(143);
