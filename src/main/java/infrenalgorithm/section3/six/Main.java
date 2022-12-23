@@ -17,7 +17,7 @@ public class Main {
                lt++;
            }
            answer = Math.max(answer, rt-lt+1);
-           System.out.println("rt = " + rt + " lt = " + lt + " answer = " + answer);
+           System.out.println("rt = " + rt + " lt = " + lt + " cnt = "+ cnt + " answer = " + answer);
        }
         return answer;
     }
