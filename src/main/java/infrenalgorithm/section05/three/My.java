@@ -10,7 +10,7 @@ public class My {
 
         Stack<Integer> stack = new Stack<>();
 
-        for(int i = 0; i < 2; i++){
+        for(int i = 0; i < 1; i++){
             int p = moves[i];
             for(int j = 1; j <= n; j++){
                 if(board[j][p] != 0) {
@@ -22,7 +22,7 @@ public class My {
 
         }
 
-        for(int i = 2; i < moves.length; i++){
+        for(int i = 1; i < moves.length; i++){
             int p = moves[i];
             for(int j = 1; j <= n; j++){
                 if(board[j][p] != 0) {
