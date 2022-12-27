@@ -14,5 +14,5 @@
 > - Two pointers & Sliding window[효율성 O(n^2) -> O(n)]
 > - HashMap, TreeSet(해쉬, 정렬지원 set)
 > - Stack, Queue
->   - [Stack 코드 확인]
+>   - [Stack 코드 확인](https://github.com/ksungsu/algorithm/blob/3b38329e2aaec654d3a8cd25adf761bfea6e9f69/src/main/java/infrenalgorithm/section05/five/My.java#L6)
 >   - [Queue 코드 확인](https://github.com/ksungsu/algorithm/blob/8ebb75178574a57538ef9cb0f9d9da80479bd333/src/main/java/infrenalgorithm/section05/six/My.java#L8)  
