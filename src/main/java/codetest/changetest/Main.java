@@ -1,37 +1,22 @@
 package codetest.changetest;
 
 import java.util.Scanner;
-import java.util.Arrays;
-import java.util.ArrayList;
+import java.util.Stack;
 
 public class Main {
 
-    public int solution(int n, int k, int[] arr){
-        int answer = 0;
+    public String solution(String str){
+        String answer = "YES";
 
-        int cnt = 0;
-        int sum = 0;
+        Stack<Character> stack = new Stack<>();
 
-        int lt = 0;
-        for(int rt = 0; rt < n; rt++){
-            if(arr[rt]==0) cnt++;
-
-            while(cnt < k+1){
-                sum += 1;
-                cnt++;
-            }
-            System.out.println(sum);
-
-            while(cnt > 1){
-                sum -= 1;
-                lt++;
-                if(arr[lt] == 0) cnt--;
-            }
-            System.out.println(sum);
-            answer = Math.max(answer, sum);
-
+        for(char x : str.toCharArray()){
+            if(x == '(') stack.push(x);
+            if(x == ')') stack.pop();
         }
 
+
+        if(!stack.isEmpty()) return "NO";
 
         return answer;
     }
@@ -40,15 +25,7 @@ public class Main {
         Main T = new Main();
         Scanner in=new Scanner(System.in);
 
-        int n = in.nextInt();
-        int k = in.nextInt();
-
-        int[] arr = new int[n];
-
-        for(int i = 0; i < n; i++){
-            arr[i] = in.nextInt();
-        }
-
-        System.out.println(T.solution(n, k, arr));
+       String str = in.next();
+        System.out.println(T.solution(str));
     }
 }
