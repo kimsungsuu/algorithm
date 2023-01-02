@@ -1,39 +1,44 @@
 package codetest.changetest;
 
+import java.util.LinkedList;
 import java.util.Scanner;
-import java.util.Stack;
+import java.util.Queue;
 
 public class Main {
-    public int solution(String str) {
+
+    public int solution(int n, int k) {
         int answer = 0;
+        int arr[] = new int[n];
+        Queue<Integer> q = new LinkedList<>();
 
-        Stack<Character> stack = new Stack<>();
+        int cnt = 0;
+        for (int i = 0; i < n; i++) {
+            arr[i] = i + 1;
+        }
 
-        char tmp = ' ';
-        for (char x : str.toCharArray()) {
-            if (x == '(') stack.push(x);
-            else {
+        for (int x : arr) {
+            q.offer(x);
+        }
 
-                if(tmp == ')'){
-                    stack.pop();
-                    answer += 1;
-                }else{
-                    stack.pop();
-                    answer += stack.size();
-                }
-
+        while (q.size() > 1) {
+            cnt++;
+            if (cnt%k != 0) {
+                q.offer(q.poll());
+            }else{
+                q.poll();
             }
 
-            tmp = x;
         }
+        answer = q.poll();
         return answer;
     }
+
         public static void main(String[] args){
             Scanner in=new Scanner(System.in);
             Main T = new Main();
 
-            String str = in.next();
-
-            System.out.println(T.solution(str));
+            int n = in.nextInt();
+            int k = in.nextInt();
+            System.out.println(T.solution(n,k));
         }
     }
