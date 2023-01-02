@@ -4,28 +4,36 @@ import java.util.Scanner;
 import java.util.Stack;
 
 public class Main {
-
-    public String solution(String str){
-        String answer = "YES";
+    public int solution(String str) {
+        int answer = 0;
 
         Stack<Character> stack = new Stack<>();
 
-        for(char x : str.toCharArray()){
-            if(x == '(') stack.push(x);
-            if(x == ')') stack.pop();
+        char tmp = ' ';
+        for (char x : str.toCharArray()) {
+            if (x == '(') stack.push(x);
+            else {
+
+                if(tmp == ')'){
+                    stack.pop();
+                    answer += 1;
+                }else{
+                    stack.pop();
+                    answer += stack.size();
+                }
+
+            }
+
+            tmp = x;
         }
-
-
-        if(!stack.isEmpty()) return "NO";
-
         return answer;
     }
+        public static void main(String[] args){
+            Scanner in=new Scanner(System.in);
+            Main T = new Main();
 
-    public static void main(String[] args){
-        Main T = new Main();
-        Scanner in=new Scanner(System.in);
+            String str = in.next();
 
-       String str = in.next();
-        System.out.println(T.solution(str));
+            System.out.println(T.solution(str));
+        }
     }
-}
