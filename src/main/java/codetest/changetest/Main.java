@@ -1,44 +1,49 @@
 package codetest.changetest;
 
-import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.Queue;
+import java.util.LinkedList;
 
 public class Main {
+    public String solution(String str, String t){
+        String answer = "YES";
 
-    public int solution(int n, int k) {
-        int answer = 0;
-        int arr[] = new int[n];
-        Queue<Integer> q = new LinkedList<>();
+        Queue<Character> q = new LinkedList<>();
 
-        int cnt = 0;
-        for (int i = 0; i < n; i++) {
-            arr[i] = i + 1;
+        Queue<Character> qStr = new LinkedList<>();
+
+
+        for(char x : str.toCharArray()){
+            qStr.offer(x);
         }
 
-        for (int x : arr) {
+        for(char x : t.toCharArray()){
             q.offer(x);
         }
 
-        while (q.size() > 1) {
-            cnt++;
-            if (cnt%k != 0) {
-                q.offer(q.poll());
-            }else{
-                q.poll();
-            }
-
+        for(int i = 0; i < str.length(); i++){
+            if(q.contains(qStr.peek())){
+                qStr.offer(qStr.poll());
+            }else qStr.poll();
         }
-        answer = q.poll();
+
+        String tmp = "";
+        for(char x : qStr){
+            tmp += x;
+        }
+
+
+        if(!tmp.equals(t)) answer = "NO";
         return answer;
     }
 
-        public static void main(String[] args){
-            Scanner in=new Scanner(System.in);
-            Main T = new Main();
+    public static void main(String[] args){
+        Main T = new Main();
+        Scanner in=new Scanner(System.in);
 
-            int n = in.nextInt();
-            int k = in.nextInt();
-            System.out.println(T.solution(n,k));
-        }
+        String t = in.next();
+        String str = in.next();
+
+        System.out.println(T.solution(str, t));
     }
+}
