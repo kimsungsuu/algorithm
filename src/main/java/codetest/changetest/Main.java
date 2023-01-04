@@ -5,35 +5,42 @@ import java.util.Queue;
 import java.util.LinkedList;
 
 public class Main {
-    public String solution(String str, String t){
-        String answer = "YES";
 
-        Queue<Character> q = new LinkedList<>();
+    class Person{
+        int num;
+        int priority;
 
-        Queue<Character> qStr = new LinkedList<>();
-
-
-        for(char x : str.toCharArray()){
-            qStr.offer(x);
+        public Person(int num, int priority){
+            this.num = num;
+            this.priority = priority;
         }
+    }
 
-        for(char x : t.toCharArray()){
-            q.offer(x);
-        }
+    public int solution(int n, int m, int[] arr){
+        int answer = 1;
 
-        for(int i = 0; i < str.length(); i++){
-            if(q.contains(qStr.peek())){
-                qStr.offer(qStr.poll());
-            }else qStr.poll();
-        }
+        Queue<Person> q = new LinkedList<>();
 
-        String tmp = "";
-        for(char x : qStr){
-            tmp += x;
+        for(int i = 0; i < n; i++){
+            q.offer(new Person(i, arr[i]));
         }
 
 
-        if(!tmp.equals(t)) answer = "NO";
+        while(!q.isEmpty()){
+            Person tmp = q.poll();
+            for(Person x : q){
+                if(x.priority > tmp.priority){
+                    q.offer(tmp);
+                    tmp = null;
+                    break;
+                }
+            }
+            if(tmp != null) {
+                if (tmp.num == m) return answer;
+                else answer++;
+            }
+        }
+
         return answer;
     }
 
@@ -41,9 +48,14 @@ public class Main {
         Main T = new Main();
         Scanner in=new Scanner(System.in);
 
-        String t = in.next();
-        String str = in.next();
+        int n = in.nextInt();
+        int m = in.nextInt();
+        int[] arr = new int[n];
 
-        System.out.println(T.solution(str, t));
+        for(int i = 0; i < n; i++){
+            arr[i] = in.nextInt();
+        }
+
+        System.out.println(T.solution(n, m, arr));
     }
 }
