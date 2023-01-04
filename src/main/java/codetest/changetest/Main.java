@@ -1,17 +1,30 @@
 package codetest.changetest;
 
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class Main {
 
-    public ArrayList<Integer> solution(int n, int[] arr){
-        ArrayList<Integer> answer = new ArrayList<>();
+    public int solution(int n, int[][] arr){
+        int answer = 0;
 
-        answer.add(arr[0]);
+        int[] px = {-1, 0, 1, 0};
+        int[] py = {0, 1, 0, -1};
 
-        for(int i = 1; i < n; i++){
-            if(arr[i-1] < arr[i]) answer.add(arr[i]);
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < n; j++){
+                boolean validation = true;
+                for(int k = 0; k < 4; k++){
+                    int nx = i + px[k];
+                    int ny = j + py[k];
+                    if(nx >= 0 && nx < n && ny >= 0 && ny < n){
+                        if(arr[i][j] <= arr[nx][ny]) {
+                            validation = false;
+                            break;
+                        }
+                    }
+                }
+                if(validation) answer++;
+            }
         }
 
         return answer;
@@ -22,10 +35,13 @@ public class Main {
         Scanner in=new Scanner(System.in);
 
         int n = in.nextInt();
-        int[] arr = new int[n];
+
+        int[][] arr = new int[n][n];
 
         for(int i = 0; i < n; i++){
-            arr[i] = in.nextInt();
+            for(int j = 0; j < n; j++){
+                arr[i][j] = in.nextInt();
+            }
         }
 
         System.out.println(T.solution(n, arr));
