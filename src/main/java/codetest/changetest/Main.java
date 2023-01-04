@@ -1,27 +1,34 @@
 package codetest.changetest;
-
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main {
 
-    public int solution(int n, int m, int[][] arr){
-        int answer = 0;
+    public ArrayList<Integer> solution(int n, int m, int[] a, int[] b){
+        ArrayList<Integer> answer = new ArrayList<>();
 
-        for(int i = 1; i <= n; i++){
-            for(int j = 1; j <= n; j++){
-                int cnt = 0;
-                for(int k = 0; k < m; k++){
-                    int px, py;
-                    px=py=0;
-                    for(int l = 0; l < n; l++){
-                        if(arr[k][l] == i) px = l;
-                        if(arr[k][l] == j) py = l;
-                    }
-                    if(px < py) cnt++;
-                }
-                if(cnt == m) answer++;
+        int nm = 0, mm = 0;
+
+        while(nm < n && mm < m){
+            if(a[nm] <= b[mm]){
+                answer.add(a[nm]);
+                nm++;
+            }else{
+                answer.add(b[mm]);
+                mm++;
             }
         }
+
+        while(nm < n){
+            answer.add(a[nm]);
+            nm++;
+        }
+
+        while(mm < m){
+            answer.add(b[mm]);
+            mm++;
+        }
+
 
         return answer;
     }
@@ -31,16 +38,21 @@ public class Main {
         Scanner in=new Scanner(System.in);
 
         int n = in.nextInt();
-        int m = in.nextInt();
 
-        int[][] arr = new int[m][n];
+        int[] a = new int[n];
 
-        for(int i = 0; i < m; i++){
-            for(int j = 0; j < n; j++){
-                arr[i][j] = in.nextInt();
-            }
+        for(int i = 0; i < n; i++){
+            a[i] = in.nextInt();
         }
 
-        System.out.println(T.solution(n, m, arr));
+        int m = in.nextInt();
+        int[] b = new int[m];
+
+        for(int i = 0; i < m; i++){
+            b[i] = in.nextInt();
+        }
+
+        for(int x : T.solution(n, m, a, b)) System.out.print(x + " ");
+
     }
 }
