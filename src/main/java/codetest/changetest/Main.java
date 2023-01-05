@@ -1,34 +1,28 @@
 package codetest.changetest;
+
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Main {
 
     public ArrayList<Integer> solution(int n, int m, int[] a, int[] b){
         ArrayList<Integer> answer = new ArrayList<>();
 
-        int nm = 0, mm = 0;
+        Arrays.sort(a);
+        Arrays.sort(b);
 
-        while(nm < n && mm < m){
-            if(a[nm] <= b[mm]){
-                answer.add(a[nm]);
-                nm++;
-            }else{
-                answer.add(b[mm]);
-                mm++;
+        int lt = 0, rt = 0;
+
+        while(lt < n && rt < m){
+            if(a[lt] < b[rt]) lt++;
+            else if(a[lt] > b[rt]) rt++;
+            else {
+                answer.add(a[lt]);
+                lt++;
+                rt++;
             }
         }
-
-        while(nm < n){
-            answer.add(a[nm]);
-            nm++;
-        }
-
-        while(mm < m){
-            answer.add(b[mm]);
-            mm++;
-        }
-
 
         return answer;
     }
@@ -46,11 +40,13 @@ public class Main {
         }
 
         int m = in.nextInt();
+
         int[] b = new int[m];
 
         for(int i = 0; i < m; i++){
             b[i] = in.nextInt();
         }
+
 
         for(int x : T.solution(n, m, a, b)) System.out.print(x + " ");
 
