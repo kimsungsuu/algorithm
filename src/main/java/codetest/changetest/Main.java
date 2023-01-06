@@ -1,27 +1,20 @@
 package codetest.changetest;
 
 import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Main {
 
-    public ArrayList<Integer> solution(int n, int m, int[] a, int[] b){
-        ArrayList<Integer> answer = new ArrayList<>();
+    public int solution(int n, int k, int[] arr){
+        int answer = 0;
+        int lt = 0, sum = 0;
 
-        Arrays.sort(a);
-        Arrays.sort(b);
-
-        int lt = 0, rt = 0;
-
-        while(lt < n && rt < m){
-            if(a[lt] < b[rt]) lt++;
-            else if(a[lt] > b[rt]) rt++;
-            else {
-                answer.add(a[lt]);
+        for(int rt = 0; rt < n; rt++){
+            sum += arr[rt];
+            if(rt >= k){
+                sum -= arr[lt];
                 lt++;
-                rt++;
             }
+            answer = Math.max(answer, sum);
         }
 
         return answer;
@@ -32,23 +25,14 @@ public class Main {
         Scanner in=new Scanner(System.in);
 
         int n = in.nextInt();
+        int k = in.nextInt();
 
-        int[] a = new int[n];
+        int[] arr = new int[n];
 
         for(int i = 0; i < n; i++){
-            a[i] = in.nextInt();
+            arr[i] = in.nextInt();
         }
 
-        int m = in.nextInt();
-
-        int[] b = new int[m];
-
-        for(int i = 0; i < m; i++){
-            b[i] = in.nextInt();
-        }
-
-
-        for(int x : T.solution(n, m, a, b)) System.out.print(x + " ");
-
+        System.out.println(T.solution(n, k, arr));
     }
 }
