@@ -1,23 +1,25 @@
 package codetest.changetest;
 
-
 import java.util.Scanner;
 
 public class Main {
-    public int solution(int n){
+    public int solution(int n, int k, int[] arr){
         int answer = 0;
-        int lt = 0, sum = 0;
+        int lt = 0, cnt = 0;
 
-        for(int rt = 0; rt <= n/2+1; rt++){
-            sum += rt;
+        for(int rt = 0; rt < n; rt++){
 
-            if(sum == n) answer++;
+            if(arr[rt] == 0) cnt++;
 
-            while(sum > n){
-                sum -= lt;
+            while(cnt > k){
+
+                if(arr[lt] == 0){
+                    cnt--;
+                }
+
                 lt++;
-                if(sum == n) answer++;
             }
+            answer = Math.max(answer, rt - lt + 1);
         }
 
         return answer;
@@ -28,7 +30,14 @@ public class Main {
         Scanner in=new Scanner(System.in);
 
         int n = in.nextInt();
+        int k = in.nextInt();
 
-        System.out.println(T.solution(n));
+        int[] arr = new int[n];
+
+        for(int i = 0; i < n; i++){
+            arr[i] = in.nextInt();
+        }
+
+        System.out.println(T.solution(n, k, arr));
     }
 }
