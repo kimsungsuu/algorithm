@@ -1,26 +1,28 @@
 package codetest.changetest;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
-    public int solution(int n, int k, int[] arr){
-        int answer = 0;
-        int lt = 0, cnt = 0;
+    public char solution(int n, String str){
+        char answer = ' ';
+        int tmp = 0;
 
-        for(int rt = 0; rt < n; rt++){
+        Map<Character, Integer> map = new HashMap<>();
 
-            if(arr[rt] == 0) cnt++;
-
-            while(cnt > k){
-
-                if(arr[lt] == 0){
-                    cnt--;
-                }
-
-                lt++;
-            }
-            answer = Math.max(answer, rt - lt + 1);
+        for(char x : str.toCharArray()){
+            map.put(x, map.getOrDefault(x, 0)+1);
         }
+
+        for (char x : map.keySet()){
+            int k = map.get(x);
+            if(tmp < k){
+                tmp = k;
+                answer = x;
+            }
+        }
+
 
         return answer;
     }
@@ -30,14 +32,9 @@ public class Main {
         Scanner in=new Scanner(System.in);
 
         int n = in.nextInt();
-        int k = in.nextInt();
+        String str = in.next();
 
-        int[] arr = new int[n];
 
-        for(int i = 0; i < n; i++){
-            arr[i] = in.nextInt();
-        }
-
-        System.out.println(T.solution(n, k, arr));
+        System.out.println(T.solution(n, str));
     }
 }
