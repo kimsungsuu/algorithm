@@ -5,24 +5,21 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
-    public char solution(int n, String str){
-        char answer = ' ';
-        int tmp = 0;
+    public String solution(String str, String str2){
+        String answer = "YES";
 
         Map<Character, Integer> map = new HashMap<>();
+        Map<Character, Integer> map2 = new HashMap<>();
 
         for(char x : str.toCharArray()){
-            map.put(x, map.getOrDefault(x, 0)+1);
+            map.put(x, map.getOrDefault(x, 0) + 1);
         }
 
-        for (char x : map.keySet()){
-            int k = map.get(x);
-            if(tmp < k){
-                tmp = k;
-                answer = x;
-            }
+        for(char x : str2.toCharArray()){
+            map2.put(x, map2.getOrDefault(x, 0) + 1);
         }
 
+        if(!map.equals(map2)) answer = "NO";
 
         return answer;
     }
@@ -31,10 +28,11 @@ public class Main {
         Main T = new Main();
         Scanner in=new Scanner(System.in);
 
-        int n = in.nextInt();
         String str = in.next();
+        String str2 = in.next();
 
 
-        System.out.println(T.solution(n, str));
+
+        System.out.println(T.solution(str, str2));
     }
 }
