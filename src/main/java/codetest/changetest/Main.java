@@ -1,25 +1,32 @@
 package codetest.changetest;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
-    public String solution(String str, String str2){
-        String answer = "YES";
+    public ArrayList<Integer> solution(int n, int m, int[] arr){
+        ArrayList<Integer> answer = new ArrayList<>();
 
-        Map<Character, Integer> map = new HashMap<>();
-        Map<Character, Integer> map2 = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
 
-        for(char x : str.toCharArray()){
-            map.put(x, map.getOrDefault(x, 0) + 1);
+        int lt = 0;
+
+        for(int i = 0; i < m-1; i++){
+            map.put(arr[i], map.getOrDefault(arr[i], 0)+1);
         }
 
-        for(char x : str2.toCharArray()){
-            map2.put(x, map2.getOrDefault(x, 0) + 1);
-        }
+        for(int rt = m-1; rt < n; rt++){
 
-        if(!map.equals(map2)) answer = "NO";
+                map.put(arr[rt], map.getOrDefault(arr[rt], 0) + 1);
+
+                map.put(arr[lt], map.get(arr[lt])-1);
+                if(map.get(arr[lt])==0) map.remove(map.remove(arr[lt]));
+                lt++;
+
+                answer.add(map.size());
+        }
 
         return answer;
     }
@@ -28,11 +35,17 @@ public class Main {
         Main T = new Main();
         Scanner in=new Scanner(System.in);
 
-        String str = in.next();
-        String str2 = in.next();
+        int n = in.nextInt();
+        int m = in.nextInt();
+
+        int[] arr = new int[n];
+
+        for(int i = 0; i < n; i++){
+            arr[i] = in.nextInt();
+        }
 
 
+        for(int x : T.solution(n, m, arr)) System.out.print(x + " ");
 
-        System.out.println(T.solution(str, str2));
     }
 }
