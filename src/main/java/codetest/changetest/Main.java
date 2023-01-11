@@ -25,7 +25,7 @@ public class Main {
 
             map.put(arr[lt], map.get(arr[lt])-1);
 
-            if(map.get(arr[lt])==0) map.remove(map.remove(arr[lt]));
+            if(map.get(arr[lt])==0) map.remove(arr[lt]);
 
             lt++;
 
