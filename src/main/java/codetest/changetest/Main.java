@@ -6,30 +6,34 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
-    public ArrayList<Integer> solution(int n, int m, int[] arr){
-        ArrayList<Integer> answer = new ArrayList<>();
+    public int solution(String a, String b){
 
-        Map<Integer, Integer> map = new HashMap<>();
+        int answer = 0;
+
+        Map<Character, Integer> map = new HashMap<>();
+        Map<Character, Integer> map2 = new HashMap<>();
+
 
         int lt = 0;
 
-        for(int i = 0; i < m-1; i++){
-            map.put(arr[i], map.getOrDefault(arr[i], 0)+1);
+        for(int i = 0; i < b.length()-1; i++){
+            map.put(a.charAt(i), map.getOrDefault(a.charAt(i), 0)+1);
         }
 
-        for(int rt = m-1; rt < n; rt++){
+        for(char x : b.toCharArray()){
+            map2.put(x, map2.getOrDefault(x, 0) + 1);
+        }
 
-                map.put(arr[rt], map.getOrDefault(arr[rt], 0) + 1);
+        for(int rt = b.length()-1; rt < a.length(); rt++){
+            map.put(a.charAt(rt), map.getOrDefault(a.charAt(rt), 0)+1);
+            if(map.equals(map2)) answer++;
 
-            answer.add(map.size());
 
-            map.put(arr[lt], map.get(arr[lt])-1);
-
-            if(map.get(arr[lt])==0) map.remove(arr[lt]);
-
+            map.put(a.charAt(lt), map.get(a.charAt(lt))-1);
+            if(map.get(a.charAt(lt)) == 0) map.remove(a.charAt(lt));
             lt++;
-
         }
+
 
         return answer;
     }
@@ -38,17 +42,10 @@ public class Main {
         Main T = new Main();
         Scanner in=new Scanner(System.in);
 
-        int n = in.nextInt();
-        int m = in.nextInt();
+        String a = in.next();
+        String b = in.next();
 
-        int[] arr = new int[n];
-
-        for(int i = 0; i < n; i++){
-            arr[i] = in.nextInt();
-        }
-
-
-        for(int x : T.solution(n, m, arr)) System.out.print(x + " ");
+        System.out.println(T.solution(a, b));
 
     }
 }
