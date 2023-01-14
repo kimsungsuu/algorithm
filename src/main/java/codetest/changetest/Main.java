@@ -5,34 +5,38 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
-    public int solution(String a, String b){
+    public int solution(int n, int m, int[] arr){
 
         int answer = 0;
 
-        Map<Character, Integer> map = new HashMap<>();
-        Map<Character, Integer> map2 = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
 
+        for(int i = 0; i < n; i++){
+            for(int j = i+1; j < n; j++){
+                for(int k = j+1; k < n; k++){
+                    int tmp = arr[i] + arr[j] + arr[k];
+                    map.put(tmp, map.getOrDefault(tmp, 0) + 1);
+                }
+            }
+        }
+        int cnt = 0;
 
-        int lt = 0;
-
-        for(int i = 0; i < b.length()-1; i++){
-            map.put(a.charAt(i), map.getOrDefault(a.charAt(i), 0)+1);
+        while(cnt != m && !map.isEmpty()){
+            int tmp = 0;
+            for(int x : map.keySet()){
+                tmp = Math.max(tmp, x);
+            }
+            if(tmp != 0){
+                System.out.println(map);
+                map.remove(tmp);
+                cnt++;
+            }
+            answer = tmp;
         }
 
-        for(char x : b.toCharArray()){
-            map2.put(x, map2.getOrDefault(x, 0) + 1);
+        if(cnt < m){
+            answer = -1;
         }
-
-        for(int rt = b.length()-1; rt < a.length(); rt++){
-            map.put(a.charAt(rt), map.getOrDefault(a.charAt(rt), 0)+1);
-            if(map.equals(map2)) answer++;
-
-
-            map.put(a.charAt(lt), map.get(a.charAt(lt))-1);
-            if(map.get(a.charAt(lt)) == 0) map.remove(a.charAt(lt));
-            lt++;
-        }
-
 
         return answer;
     }
@@ -41,10 +45,16 @@ public class Main {
         Main T = new Main();
         Scanner in=new Scanner(System.in);
 
-        String a = in.next();
-        String b = in.next();
+        int n = in.nextInt();
+        int m = in.nextInt();
 
-        System.out.println(T.solution(a, b));
+        int[] arr = new int[n];
+
+        for(int i = 0; i < n; i++){
+            arr[i] = in.nextInt();
+        }
+
+        System.out.println(T.solution(n, m, arr));
 
     }
 }
