@@ -2,30 +2,25 @@ package infrenalgorithm.section06.two;
 
 import java.util.Scanner;
 
-public class Main {
+public class My {
     public int[] solution(int n, int[] arr){
 
-
-
-        for(int i = 0; i < n; i++){
-            int idx = i;
-            for(int j = i+1; j < n; j++){
-                if(arr[j] < arr[idx]){
-                    idx = j;
+        for(int i = 0; i < n-i; i++){
+            while(i != n-1) {
+                if (arr[i] > arr[i + 1]){
+                    int tmp = arr[i];
+                    arr[i] = arr[i+1];
+                    arr[i+1] = tmp;
                 }
             }
-            int tmp = arr[i];
-            arr[i] = arr[idx];
-            arr[idx] = tmp;
         }
-
 
 
         return arr;
     }
 
     public static void main(String[] args){
-        infrenalgorithm.section06.one.Main T = new infrenalgorithm.section06.one.Main();
+        My T = new My();
         Scanner in = new Scanner(System.in);
 
         int n = in.nextInt();
