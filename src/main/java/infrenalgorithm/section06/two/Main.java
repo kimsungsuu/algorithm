@@ -6,7 +6,7 @@ public class Main {
     public int[] solution(int n, int[] arr){
 
        for(int i = 0; i < n-1; i++){    // 반복 횟수
-           for(int j = 0; j < n-i-1; j++){ // 실질적 버블 정렬 로직
+           for(int j = 0; j < n-i-1; j++){ // 실질적 버블 정렬 로직!
                if(arr[j] > arr[j+1]){
                    int tmp = arr[j];
                    arr[j] = arr[j+1];
