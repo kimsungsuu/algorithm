@@ -1,4 +1,4 @@
-package infrenalgorithm.section06.one;
+package infrenalgorithm.section06.two;
 
 import java.util.Scanner;
 
@@ -25,7 +25,7 @@ public class Main {
     }
 
     public static void main(String[] args){
-        Main T = new Main();
+        infrenalgorithm.section06.one.Main T = new infrenalgorithm.section06.one.Main();
         Scanner in = new Scanner(System.in);
 
         int n = in.nextInt();
@@ -37,4 +37,5 @@ public class Main {
 
         for(int x : T.solution(n, arr)) System.out.print(x + " ");
     }
+
 }
