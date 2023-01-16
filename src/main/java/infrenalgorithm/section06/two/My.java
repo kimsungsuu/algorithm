@@ -2,6 +2,9 @@ package infrenalgorithm.section06.two;
 
 import java.util.Scanner;
 
+/**
+ * Time Limit Exceeded 로직
+ */
 public class My {
     public int[] solution(int n, int[] arr){
 
