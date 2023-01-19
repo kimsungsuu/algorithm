@@ -6,16 +6,16 @@ public class My {
     public int[] solution(int n, int k, int[] arr){
         int[] answer = new int[n];
 
-        for(int i = 0; i < n; i++){
-
+        for (int i = 0; i < n; i++){
             for(int j = 0; j < n; j++){
-                if(answer[j] == arr[i]){
+                if(answer[j] == arr[i]) {
+                    int tmp = answer[j];
                     answer[0] = answer[j];
-                    answer[j] = 0;
-                }else{
-//                    answer[]
+                    answer[j] = tmp;
+                    break;
                 }
             }
+
         }
 
         return answer;
