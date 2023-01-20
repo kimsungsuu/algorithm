@@ -6,16 +6,20 @@ public class My {
     public int[] solution(int n, int k, int[] arr){
         int[] answer = new int[n];
 
-        for (int i = 0; i < n; i++){
-            for(int j = 0; j < n; j++){
-                if(answer[j] == arr[i]) {
-                    int tmp = answer[j];
-                    answer[0] = answer[j];
-                    answer[j] = tmp;
-                    break;
+        for(int x : arr){
+            int pos = -1;
+            for(int i = 0; i < n; i++) if(x == answer[i]) pos = i;
+
+            if(pos == -1){
+                for(int i = n-1; i >= 1; i--){
+                    answer[i] = answer[i-1];
+                }
+            }else{
+                for(int i = pos; i >= 1; i--){
+                    answer[i] = answer[i-1];
                 }
             }
-
+            answer[0] = x;
         }
 
         return answer;
@@ -27,9 +31,9 @@ public class My {
         int n = in.nextInt();
         int k = in.nextInt();
 
-        int[] arr = new int[n];
+        int[] arr = new int[k];
 
-        for(int i = 0; i < n; i++){
+        for(int i = 0; i < k; i++){
             arr[i] = in.nextInt();
         }
 
