@@ -7,24 +7,25 @@ public class My {
     public ArrayList<Integer> solution(int n, int[] arr){
         ArrayList<Integer> answer = new ArrayList<>();
         int pos = 0;
-        for(int i = 0; i < n-1; i++){
-            if(arr[i] > arr[i+1]) {
-                answer.add(i+1);
-                pos = i;
+        for(int i = 0; i < n-1; i++) {
+            for(int j = i+1; j < n; j++){
+                if(arr[i] > arr[j]){
+                    answer.add(i+1);
+                    pos = i;
+                    break;
+                }
+            }
+            if(pos != 0) break;
+        }
+
+        for(int i = 0; i < n; i++){
+            if(arr[pos] < arr[i]) {
+                answer.add(i);
                 break;
             }
         }
 
-        System.out.println(arr[pos]);
-
-        for(int i = 0; i < n-1; i++){
-            if(arr[pos] <= arr[i+1]){
-                answer.add(i+1);
-                break;
-            }
-        }
-
-
+        if(answer.size() == 1) answer.add(n);
 
         return answer;
     }
