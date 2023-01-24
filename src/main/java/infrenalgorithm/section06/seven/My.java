@@ -6,6 +6,9 @@ public class My {
 
     public void solution(int n, int[] x, int[] y){
 
+        for(int i = 0; i < n; i++) {
+            System.out.println(x[i] + " " + y[i]);
+        }
     }
 
     public static void main(String[] args) {
@@ -20,5 +23,7 @@ public class My {
             x[i] = in.nextInt();
             y[i] = in.nextInt();
         }
+
+        T.solution(n, x, y);
     }
 }
