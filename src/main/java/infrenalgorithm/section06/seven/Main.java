@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 class Point implements Comparable<Point>{
     public int x, y;
+
     Point(int x, int y){
         this.x = x;
         this.y = y;
@@ -29,6 +30,6 @@ class Main {
             arr.add(new Point(x,y));
         }
         Collections.sort(arr);
-        for(Point o  :arr) System.out.println(o.x + " " + o.y);
+        for(Point o : arr) System.out.println(o.x + " " + o.y);
     }
 }
