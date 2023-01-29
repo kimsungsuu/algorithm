@@ -10,6 +10,9 @@ public class My {
 
         int rt = 0;
         int cnt = 0;
+
+        Arrays.sort(arr);
+
         int sum = arr[0];
 
         int tmp = arr[0];
