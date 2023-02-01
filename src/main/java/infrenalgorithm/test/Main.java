@@ -1,23 +1,32 @@
 package infrenalgorithm.test;
 
+
+import java.sql.SQLOutput;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class Main {
+    public int solution(String skill){
+        int answer = 0;
 
-    public static void main(String[] args){
-        int a[][][] = new int [4][11][11];
+        String tmp = "hello world";
 
-        for(int i = 0; i < 4; i++){
-            for(int j = 0; j < 11; j++){
-                for(int k = 0; k < 11; k++){
-                    a[i][j][k] = i+1;
-                    System.out.print(a[i][j][k] + "\t");
-                }
-                System.out.println();
-            }
-            System.out.println();
-        }
+        System.out.println(skill.indexOf("w"));
+        System.out.println(tmp.indexOf("wor"));
+        System.out.println(skill.indexOf("wor"));
 
+
+        return answer;
+    }
+    public static void main(String[] args) {
+        Main T = new Main();
+        Scanner in = new Scanner(System.in);
+
+        String skill = in.next();
+
+        System.out.println(T.solution(skill));
 
     }
 }
