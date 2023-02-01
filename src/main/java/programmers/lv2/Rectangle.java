@@ -6,14 +6,7 @@ public class Rectangle {
     public long solution(int w, int h){
         long answer = w*h;
 
-        int tmp = 0;
 
-        while(w==0 && h==0){
-            for(int i = 0; i < w; i++){
-                if(w % i == 0) tmp += i;
-            }
-
-        }
 
 
 
