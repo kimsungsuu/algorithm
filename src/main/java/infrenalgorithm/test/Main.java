@@ -1,50 +1,36 @@
 package infrenalgorithm.test;
 
 
-import java.util.HashMap;
-import java.util.HashSet;
+import java.sql.SQLOutput;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class Main {
-    public int[] solution(int n, String[] words) {
-        int[] answer = { 0, 0 };
-        char chEnd = words[0].charAt(words[0].length() - 1);
-        char chStart;
+    public int solution(String skill){
+        int answer = 0;
 
-//        System.out.print(chEnd + " ");
-        HashSet<String> log = new HashSet<>();
-        log.add(words[0]);
-        for (int i = 1; i < words.length; i++) {
+        String tmp = "hello world";
 
-            chStart = words[i].charAt(0);
-            log.add(words[i]);
-//            System.out.println("i = " + i + " " + " i%n+1 = " + (i%n+1));
+        System.out.println(skill.indexOf("w"));
+        System.out.println(tmp.indexOf("wor"));
+        System.out.println(skill.indexOf("wor"));
+        System.out.println(skill.indexOf("hello"));
 
-            if (chEnd != chStart || log.size() != i + 1) {
-//                System.out.print(i + 1 + "!");
-                answer[0] = (i % n)+1;
-                answer[1] = (i / n) + 1;
-                break;
-            }
+        System.out.println(skill == tmp);
+        System.out.println(skill.equals(tmp));
 
-            chEnd = words[i].charAt(words[i].length() - 1);
-//            System.out.print(chEnd + " ");
-        }
-//        System.out.println();
-        System.out.println("(" + answer[0] + ", " + answer[1] + ")");
+
         return answer;
     }
-
     public static void main(String[] args) {
         Main T = new Main();
         Scanner in = new Scanner(System.in);
 
-        int n = in.nextInt();
+        String skill = in.nextLine();
 
-        String[] words = {"tank", "kick", "know", "wheel", "land", "dream", "mother", "robot", "tank"};
-
-        System.out.println(T.solution(n, words));
-
+        System.out.println(T.solution(skill));
 
     }
 }
