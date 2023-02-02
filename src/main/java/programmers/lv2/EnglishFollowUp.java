@@ -13,12 +13,11 @@ public class EnglishFollowUp {
 
         HashMap<String, Integer> map = new HashMap<>();
 
-        int lt = 0, rt = 1;
-        int cnt = 0;
+        int lt = 1, rt = 1;
+
         //words 내에 같은 문자열이 나올 때
         for(String x : words){
             map.put(x, map.getOrDefault(x, 0)+1);
-            lt++;
             if(map.get(x) == 2){
                 answer[0] = lt;
                 answer[1] = rt;
@@ -30,6 +29,7 @@ public class EnglishFollowUp {
                 lt = 0;
                 rt++;
             }
+            lt++;
         }
 
         lt = 1;
@@ -52,7 +52,7 @@ public class EnglishFollowUp {
             }
         }
 
-        System.out.println(answer[0] + "" + answer[1]);
+//        System.out.println(answer[0] + "" + answer[1]);
         return answer;
     }
 
@@ -62,7 +62,7 @@ public class EnglishFollowUp {
 
         int n = in.nextInt();
 
-        String[] words = {"hello", "observe", "effect", "take", "either", "kecognize", "kncourage", "ensure", "establish", "hang", "gather", "refer", "reference", "estimate", "kxecutive"};
+        String[] words = {"hello", "observe", "effect", "take", "kither", "kecognize", "kncourage", "ensure", "establish", "hang", "gather", "refer", "reference", "estimate", "kxecutive"};
 
         System.out.println(T.solution(n, words));
 
