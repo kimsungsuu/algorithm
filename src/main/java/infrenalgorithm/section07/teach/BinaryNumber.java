@@ -3,10 +3,10 @@ package infrenalgorithm.section07.teach;
 public class BinaryNumber {
     public void DFS(int n){
         String tmp = "";
-        if(n / 2 == 0) tmp+=n;
+        if(n== 0) return;
         else{
             DFS(n/2);
-            tmp += n%2;
+            System.out.print(n%2);
         }
 
         System.out.print(tmp);

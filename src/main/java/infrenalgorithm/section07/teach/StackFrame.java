@@ -6,8 +6,8 @@ public class StackFrame {
     public void DFS(int n){
         if(n == 0) return;
         else{
-            System.out.print(n + " ");
             DFS(n-1);
+            System.out.print(n + " ");
         }
     }
 
