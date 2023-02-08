@@ -66,12 +66,14 @@ public class Delivery {
             int b = in.nextInt();
             int c = in.nextInt();
             graph.get(a).add(new Edge(b, c));
+            graph.get(b).add(new Edge(a, c));
         }
         T.solution(1);
 
         int k = 0;
 
         for(int i = 1; i <= n; i++){
+            System.out.println(dis[i]);
             if(dis[i] <= 3) k++;
         }
 
