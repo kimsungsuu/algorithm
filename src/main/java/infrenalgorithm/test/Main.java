@@ -51,9 +51,9 @@ public class Main {
             pQ.offer(new Edge(1, 0));
             while(!pQ.isEmpty()){
                 Edge tmp = pQ.poll();
-                int now = tmp.vex;
-                int nowCost = tmp.cost;
-                if(nowCost>dis[now]) continue;
+                int now = tmp.vex; // 도착하려는 정점
+                int nowCost = tmp.cost; // 소요되는 가중치
+                if(nowCost>dis[now]) continue; // dis[now]는 도착하려는 정점까지 소요되는 최소한의 가중치를 저장한 값이다.
                 for(Edge ob : graph.get(now)){
                     if(dis[ob.vex] > nowCost+ob.cost){
                         dis[ob.vex] = nowCost+ob.cost;
