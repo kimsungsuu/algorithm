@@ -24,20 +24,30 @@ public class BaseStation {
             }
         }
 
+
         for(int i = 1; i <= n; i++){
             int cnt = 1;
             int lt = i;
+            System.out.println(lt);
             if(arr[i] == 0){
                 while(cnt <= w*2+1 && lt <= n){
+                    if(arr[lt] == 1) break;
                     arr[lt++] = 1;
                     cnt++;
                 }
+                i = lt-1;
                 answer++;
             }
         }
+//
+//        for(int i = 1; i <= n; i++){
+//            System.out.print(arr[i] + " ");
+//        }
+
 
         return answer;
     }
+
 
 
     public static void main(String[] args) {
@@ -45,7 +55,7 @@ public class BaseStation {
         Scanner in = new Scanner(System.in);
 
         int n = in.nextInt();
-        int[] station = {9};
+        int[] station = {4, 11};
         int w = in.nextInt();
 
         System.out.println(T.solution(n, station, w));
