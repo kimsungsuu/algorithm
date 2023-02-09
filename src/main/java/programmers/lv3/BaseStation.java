@@ -1,5 +1,6 @@
 package programmers.lv3;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class BaseStation {
@@ -7,43 +8,39 @@ public class BaseStation {
     public int solution(int n, int[] station, int w){
         int answer = 0;
 
-        int[] arr = new int[n+1];
+        Arrays.sort(station);
+
+        int leftStart = 1;
+
+        int tmp = w*2+1;
 
         for(int k : station){
+            if(leftStart < k - w) {
+                int leftEnd = k - w;
 
-            for(int i = k; i <= k+w; i++){
-                if(i <= n){
-                    arr[i] = 1;
-                }
+                int length = leftEnd - leftStart;
+
+                int count = length / tmp;
+                if (length % tmp != 0) count++;
+
+                answer += count;
             }
 
-            for(int i = k-1; i >= k-w; i--){
-                if(i > 0){
-                    arr[i] = 1;
-                }
-            }
+            leftStart = k + w + 1;
+
         }
 
+        if(station[station.length-1] + w + 1 <= n){
+            leftStart = station[station.length-1] + w + 1;
+            int leftEnd = n+1;
 
-        for(int i = 1; i <= n; i++){
-            int cnt = 1;
-            int lt = i;
-            System.out.println(lt);
-            if(arr[i] == 0){
-                while(cnt <= w*2+1 && lt <= n){
-                    if(arr[lt] == 1) break;
-                    arr[lt++] = 1;
-                    cnt++;
-                }
-                i = lt-1;
-                answer++;
-            }
+            int length = leftEnd - leftStart;
+
+            int count = length / tmp;
+            if(length % tmp != 0) count++;
+
+            answer += count;
         }
-//
-//        for(int i = 1; i <= n; i++){
-//            System.out.print(arr[i] + " ");
-//        }
-
 
         return answer;
     }
