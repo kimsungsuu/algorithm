@@ -7,80 +7,39 @@ import java.util.Arrays;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
-class Edge implements Comparable<Edge>{
 
-    public int vex;
-    public int cost;
-
-    Edge(int vex, int cost){
-        this.vex = vex;
-        this.cost = cost;
-    }
-
-    @Override
-    public int compareTo(Edge ob){
-        return this.cost - ob.cost;
-    }
-}
 public class Main {
-        static final int max = 50001;
 
-        public int solution(int N, int[][] road, int K){
-            int answer = 0 ;
-            ArrayList<ArrayList<Edge>> graph = new ArrayList<ArrayList<Edge>>();
+    public int solution(int[] d, int budget) {
+        int answer = 0;
 
-            for(int i = 0; i <= N; i++){
-                graph.add(new ArrayList<Edge>());
-            }
+        Arrays.sort(d);
 
-            for(int i = 0; i < road.length; i++) {
-                int a = road[i][0];
-                int b = road[i][1];
-                int c = road[i][2];
-                graph.get(a).add(new Edge(b, c));
-                graph.get(b).add(new Edge(a, c));
-            }
+        int lt = 0;
 
-            int[] dis = new int[N+1];
-
-            for(int i = 2; i <= N; i++) {
-                dis[i] = max;
-            }
-
-            PriorityQueue<Edge> pQ = new PriorityQueue<>();
-            pQ.offer(new Edge(1, 0));
-            while(!pQ.isEmpty()){
-                Edge tmp = pQ.poll();
-                int now = tmp.vex; // 도착하려는 정점
-                int nowCost = tmp.cost; // 소요되는 가중치
-                if(nowCost>dis[now]) continue; // dis[now]는 도착하려는 정점까지 소요되는 최소한의 가중치를 저장한 값이다.
-                for(Edge ob : graph.get(now)){
-                    if(dis[ob.vex] > nowCost+ob.cost){
-                        dis[ob.vex] = nowCost+ob.cost;
-                        pQ.offer(new Edge(ob.vex, nowCost+ ob.cost));
-                    }
-                }
-
-            }
-
-            for(int i = 1; i <= N; i++) {
-                System.out.println(dis[i]);
-                if(dis[i] <= K) answer++;
-            }
-
-            return answer;
+        while(budget > 0){
+            budget -= d[lt];
+            lt++;
+            if(budget >= 0) answer++;
         }
+
+
+        return answer;
+    }
 
         public static void main(String[] args) {
             Main T = new Main();
             Scanner in = new Scanner(System.in);
 
-            int N = in.nextInt();
-            int[][] road = {{1,2,1}, {2,3,3}, {5,2,2}, {1,4,2}, {5,3,1}, {5,4,2}}; //간선 집합
-            int K = in.nextInt();
+            int n = in.nextInt();
+            int[] arr = new int[n];
 
+            for(int i = 0; i < n; i++){
+                arr[i] = in.nextInt();
+            }
 
+            int budget = in.nextInt();
 
-            System.out.println(T.solution(N, road, K));
+            System.out.print(T.solution(arr, budget));
         }
     }
