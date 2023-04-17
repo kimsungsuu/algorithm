@@ -31,6 +31,6 @@ public class NineProblem {
         tree.root.lt.lt = new NineNode(4);
         tree.root.lt.rt = new NineNode(5);
 
-        System.out.println(        tree.DFS(L, tree.root));
+        System.out.println(tree.DFS(L, tree.root));
     }
 }
