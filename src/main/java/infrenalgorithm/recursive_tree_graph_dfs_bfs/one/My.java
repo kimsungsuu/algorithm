@@ -1,4 +1,4 @@
-package infrenalgorithm.section07.one;
+package infrenalgorithm.recursive_tree_graph_dfs_bfs.one;
 
 import java.util.Scanner;
 

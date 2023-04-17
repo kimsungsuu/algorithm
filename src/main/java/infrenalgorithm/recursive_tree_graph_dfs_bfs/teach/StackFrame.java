@@ -1,6 +1,4 @@
-package infrenalgorithm.section07.teach;
-
-import java.util.Scanner;
+package infrenalgorithm.recursive_tree_graph_dfs_bfs.teach;
 
 public class StackFrame {
     public void DFS(int n){

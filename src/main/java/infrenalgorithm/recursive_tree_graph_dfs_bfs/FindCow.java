@@ -1,4 +1,4 @@
-package infrenalgorithm.section07;
+package infrenalgorithm.recursive_tree_graph_dfs_bfs;
 
 
 import java.util.LinkedList;

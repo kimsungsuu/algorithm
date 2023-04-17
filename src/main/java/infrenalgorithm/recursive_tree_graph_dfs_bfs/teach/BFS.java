@@ -1,4 +1,4 @@
-package infrenalgorithm.section07.teach;
+package infrenalgorithm.recursive_tree_graph_dfs_bfs.teach;
 
 import java.util.LinkedList;
 import java.util.Queue;
