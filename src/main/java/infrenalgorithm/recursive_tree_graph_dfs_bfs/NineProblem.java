@@ -16,12 +16,8 @@ public class NineProblem {
     public int DFS(int L, NineNode root){
         if(root.lt == null && root.rt == null) return L;
         else{
-            DFS(L, root.lt);
-            DFS(L,root.rt);
-            L += 1;
+            return Math.min(DFS(L+1, root.lt), DFS(L+1, root.rt));
         }
-
-        return L;
     }
 
     public static void main(String[] args) {
