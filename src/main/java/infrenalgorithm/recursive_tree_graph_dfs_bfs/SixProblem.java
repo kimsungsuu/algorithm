@@ -9,12 +9,12 @@ public class SixProblem {
 
     public void D(int L){
         if(L == n+1){
-
             String tmp = "";
             for(int i = 1; i <= n; i++){
                 if(ch[i] == 1) tmp += i + " ";
             }
-            if(tmp.length() > 0) System.out.println(tmp);
+            System.out.println(tmp);
+            if(tmp.length() == 0) System.out.println("finish!");
         }else{
             ch[L] = 1;
             D(L+1);
