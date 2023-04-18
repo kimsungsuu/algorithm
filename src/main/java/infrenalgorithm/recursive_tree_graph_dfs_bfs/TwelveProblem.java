@@ -14,7 +14,9 @@ public class TwelveProblem {
                 if(ch[i] == 1) tmp += i + " ";
             }
 
-            if(tmp.length() != 0) System.out.println(tmp);
+            if(tmp.length() != 0) {
+                System.out.println(tmp);
+            }
         }
         else{
             for(int i = 1; i <= n; i++){
