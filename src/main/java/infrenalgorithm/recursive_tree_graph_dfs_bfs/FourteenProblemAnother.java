@@ -42,7 +42,6 @@ public class FourteenProblemAnother {
         m = in.nextInt();
 
         graph = new int[n+1][n+1];
-        dis = new int[n+1];
 
         ch = new int[n+1];
 
