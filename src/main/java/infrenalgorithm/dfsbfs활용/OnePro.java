@@ -1,4 +1,4 @@
-package infrenalgorithm.dfs_bfs_using;
+package infrenalgorithm.dfsbfs활용;
 
 import java.util.Scanner;
 
