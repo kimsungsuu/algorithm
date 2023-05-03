@@ -6,7 +6,7 @@ public class 미로탐색 {
     static int[] dx = {-1, 0, 1, 0}; //상,우,하,좌
     static int[] dy = {0, 1, 0, -1}; //상,우,하,좌
 
-    static int[][] arr, ch;
+    static int[][] arr;
 
     static int answer;
 
@@ -30,7 +30,6 @@ public class 미로탐색 {
         Scanner in = new Scanner(System.in);
 
         arr = new int[8][8];
-        ch = new int[8][8];
 
         for (int i = 1; i <= 7; i++) {
             for (int j = 1; j <= 7; j++) {
