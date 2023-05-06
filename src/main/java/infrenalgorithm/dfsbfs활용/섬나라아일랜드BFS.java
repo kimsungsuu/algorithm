@@ -13,7 +13,7 @@ class SumnaraPoint{
     }
 }
 
-public class 섬나라아일랜드 {
+public class 섬나라아일랜드BFS {
 
     static int n, answer;
 
@@ -59,7 +59,7 @@ public class 섬나라아일랜드 {
         answer++;
     }
     public static void main(String[] args) {
-        섬나라아일랜드 T = new 섬나라아일랜드();
+        섬나라아일랜드BFS T = new 섬나라아일랜드BFS();
         Scanner in = new Scanner(System.in);
 
         n = in.nextInt();
