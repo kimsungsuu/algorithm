@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class 피자배달거리 {
     static int n, m;
     static int[][] arr;
+    static int[] px, py;
     static int cnt;
     static int answer;
 
@@ -16,26 +17,6 @@ public class 피자배달거리 {
     static boolean[][] ch;
 
     public void DFS(int x, int y) {
-        for (int i = 0; i < 4; i++) {
-            if (flag) return;
-
-            int nx = x + dx[i];
-            int ny = y + dy[i];
-
-            if (nx > 0 && ny > 0 && nx <= n && ny <= n && arr[nx][ny] == 2) {
-                answer++;
-                flag = true;
-                cnt++;
-                return;
-            }
-
-            if (nx > 0 && ny > 0 && nx <= n && ny <= n && arr[nx][ny] != 2 && !flag) {
-                if (!ch[nx][ny]) {
-                    ch[nx][ny] = true;
-                    DFS(nx, ny);
-                }
-            }
-        }
 
     }
 
@@ -48,21 +29,33 @@ public class 피자배달거리 {
 
         arr = new int[n + 1][n + 1];
 
+        px = new int[n*n];
+        py = new int[n*n];
+
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= n; j++) {
                 arr[i][j] = in.nextInt();
             }
         }
 
+        int cnt = 1;
+
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= n; j++) {
-                if (arr[i][j] == 1 && cnt <= m) {
-                    flag = false;
-                    ch = new boolean[n + 1][n + 1];
-                    T.DFS(i, j);
+                if(arr[i][j] == 2){
+                    px[cnt] = i;
+                    py[cnt] = j;
+                    cnt++;
                 }
             }
         }
+
+        for(int i = 1; i < cnt; i++){
+            System.out.print(px[i] + ", " + py[i]);
+            System.out.println();
+        }
+
+
 
         System.out.print(answer);
     }
