@@ -14,7 +14,7 @@ public class 피자배달거리 {
 
     // 피자집 갯수Cm으로 나올 수 있는 조합의 경우 들
     public void DFS(int L, int s) {
-        if(L == n){
+        if(L == m){
             for(int i = 1; i <= n; i++){
                 for(int j = 1; j <= n; j++){
                     if(arr[i][j] == 1){
@@ -22,13 +22,12 @@ public class 피자배달거리 {
                         int temp2;
                         temp3 = n;
                         for(int k = 0; k < L; k++){
-                            if(i <= resultX[k]) temp1 = (resultX[k] - i);
+                            if(i < resultX[k]) temp1 = (resultX[k] - i);
                             else temp1 = i - resultX[k];
-                            if(j <= resultY[k]) temp2 =(resultY[k] - j);
+                            if(j < resultY[k]) temp2 =(resultY[k] - j);
                             else temp2 = j - resultY[k];
 
                             temp3 = Math.min(temp3, temp1+temp2);
-                            if(temp3 == 1) break;
                         }
                         temp4 += temp3;
                     }
@@ -60,8 +59,8 @@ public class 피자배달거리 {
         py = new int[n*n];
 
         // 모든 피자집에서 m개의 조합을 담을 배열
-        resultX = new int[n];
-        resultY = new int[n];
+        resultX = new int[m];
+        resultY = new int[m];
 
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= n; j++) {
