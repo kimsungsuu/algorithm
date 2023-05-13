@@ -15,27 +15,25 @@ class Discuss implements Comparable<Discuss>{
 
     @Override
     public int compareTo(Discuss o){
-        return this.s - o.s;
+        if(this.e == o.e) return this.s - o.s;
+        else return this.e - o.e;
     }
 }
 
 public class 회의실배정 {
 
-    public int solution(ArrayList<Discuss> arr, int n){
-        int answer = 1;
+    public int solution(ArrayList<Discuss> arr){
+        int cnt = 1;
         Collections.sort(arr);
-        for(int i = 0; i < n; i++){
-            int cnt = 1;
-            int temp = arr.get(i).e;
-            for(int j = i+1; j < n; j++){
-                if(temp <= arr.get(j).s){
-                    temp = arr.get(j).e;
-                    cnt++;
-                }
+        int tempE = arr.get(0).e;
+
+        for(Discuss o : arr){
+            if(tempE <= o.s){
+                tempE = o.e;
+                cnt++;
             }
-            answer = Math.max(answer, cnt);
         }
-        return answer;
+        return cnt;
     }
 
     public static void main(String[] args) {
@@ -51,6 +49,6 @@ public class 회의실배정 {
             arr.add(new Discuss(s, e));
         }
 
-        System.out.print(T.solution(arr, n));
+        System.out.print(T.solution(arr));
     }
 }
