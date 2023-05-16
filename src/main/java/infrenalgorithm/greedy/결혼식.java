@@ -1,11 +1,9 @@
 package infrenalgorithm.greedy;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Scanner;
+import java.util.*;
 
 
-    class Marry implements Comparable<Marry>{
+class Marry implements Comparable<Marry>{
         public int s;
         public int e;
 
@@ -16,7 +14,8 @@ import java.util.Scanner;
 
         @Override
         public int compareTo(Marry o){
-            return this.s - o.s;
+            if(this.s == o.s) return this.e - o.e;
+            else return this.s - o.s;
         }
     }
 
@@ -24,23 +23,25 @@ public class 결혼식 {
 
     public int solution(ArrayList<Marry> arr, int n){
         int answer = 0;
-        int tempIndex = 0;
 
-        ArrayList<Marry> result = new ArrayList<>();
+        Queue<Marry> Q = new LinkedList<>();
 
-        result.add(arr.get(0));
+        Q.offer(arr.get(0));
+
+        Marry temp = Q.peek();
 
         for(int i = 1; i < n; i++){
-            int temp = arr.get(tempIndex).e;
-            if(temp > arr.get(i).s){
-                result.add(arr.get(i));
-            }else if(temp <= arr.get(i).s){
-                result.add(arr.get(i));
-                result.remove();
-                tempIndex++;
+            if(temp.e > arr.get(i).s){
+                Q.offer(arr.get(i));
+            }else if(temp.e <= arr.get(i).s){
+                Q.add(arr.get(i));
+                while(temp.e == Q.peek().e){
+                    Q.poll();
+                }
+                temp = Q.peek();
             }
 
-            answer = Math.max(answer, result.size());
+            answer = Math.max(answer, Q.size());
         }
 
         return answer;
