@@ -2,7 +2,6 @@ package infrenalgorithm.greedy;
 
 import java.util.*;
 
-
 class Marry implements Comparable<Marry>{
         public int s;
         public int e;
@@ -35,7 +34,7 @@ public class 결혼식 {
                 Q.offer(arr.get(i));
             }else if(temp.e <= arr.get(i).s){
                 Q.add(arr.get(i));
-                while(temp.e == Q.peek().e){
+                while(temp.e > Q.peek().e){
                     Q.poll();
                 }
                 temp = Q.peek();
