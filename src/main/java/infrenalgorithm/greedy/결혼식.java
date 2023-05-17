@@ -20,26 +20,19 @@ class Marry implements Comparable<Marry>{
 
 public class 결혼식 {
 
-    public int solution(ArrayList<Marry> arr, int n){
-        int answer = 0;
+    public int solution(Marry[] slot, int n){
+        int answer = 1;
 
-        Queue<Marry> Q = new LinkedList<>();
+        Queue<Integer> Q = new LinkedList<>();
 
-        Q.offer(arr.get(0));
-
-        Marry temp = Q.peek();
+        Q.offer(slot[0].e);
 
         for(int i = 1; i < n; i++){
-            if(temp.e > arr.get(i).s){
-                Q.offer(arr.get(i));
-            }else if(temp.e <= arr.get(i).s){
-                Q.add(arr.get(i));
-                while(temp.e > Q.peek().e){
-                    Q.poll();
-                }
-                temp = Q.peek();
+            while(Q.peek() <= slot[i].s) {
+                Q.poll();
             }
 
+            Q.offer(slot[i].e);
             answer = Math.max(answer, Q.size());
         }
 
@@ -52,18 +45,19 @@ public class 결혼식 {
 
         int n = in.nextInt();
 
-        ArrayList<Marry> arr = new ArrayList<>();
+//        ArrayList<Marry> arr = new ArrayList<>();
+
+        Marry[] slots = new Marry[n];
 
         for(int i = 0; i < n; i++){
             int s = in.nextInt();
             int e = in.nextInt();
-            arr.add(new Marry(s, e));
+            slots[i] = new Marry(s, e);
         }
 
-        Collections.sort(arr);
+        Arrays.sort(slots);
 
-        System.out.println(T.solution(arr, n));
-
+        System.out.println(T.solution(slots, n));
     }
 }
 
