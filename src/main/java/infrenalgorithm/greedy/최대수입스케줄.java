@@ -1,49 +1,53 @@
 package infrenalgorithm.greedy;
 
-import java.util.Arrays;
-import java.util.PriorityQueue;
-import java.util.Scanner;
+import java.util.*;
 
-class Recture implements Comparable<Recture>{
+class Lecture implements Comparable<Lecture>{
     public int m;
     public int d;
 
-    public Recture(int m, int d){
+    public Lecture(int m, int d){
         this.m = m;
         this.d = d;
     }
 
     @Override
-    public int compareTo(Recture o){
-        if(this.d == d) return o.m - this.m;
+    public int compareTo(Lecture o){
+        if(this.d == o.d) return o.m - this.m;
         else return o.d - this.d;
     }
 }
 
 public class 최대수입스케줄 {
+    static int max = Integer.MIN_VALUE;
 
-    public int solution(Recture[] arr, int n){
+    public int solution(ArrayList<Lecture> arr, int n){
         int answer = 0;
 
-        PriorityQueue<Recture> pQ = new PriorityQueue<>();
+        PriorityQueue<Integer> pQ = new PriorityQueue<>(Collections.reverseOrder());
 
-        for(Recture x : arr){
-            pQ.offer(x);
-        }
+        pQ.offer(arr.get(0).m);
 
+        int tmp = arr.get(0).d;
         int cnt = 0;
-        int max = Integer.MIN_VALUE;
-        for(int i = 0; i < n; i++){
-            if(pQ.peek().d > pQ.size()){
+
+        for(int i = 1; i < n; i++){
+            if(tmp == arr.get(i).d){
+                if(i == n-1){
+                    pQ.offer(arr.get(i).m);
+                    answer += pQ.poll();
+                    return answer;
+                }
+                pQ.offer(arr.get(i).m);
             }else{
+                answer += pQ.poll();
+                pQ.offer(arr.get(i).m);
                 cnt++;
-                max = pQ.peek().d;
             }
-            pQ.poll();
-//            if(cnt == )
+            tmp = arr.get(i).d;
         }
 
-        return answer;
+        return -1;
     }
     public static void main(String[] args) {
         최대수입스케줄 T = new 최대수입스케줄();
@@ -51,16 +55,21 @@ public class 최대수입스케줄 {
 
         int n = in.nextInt();
 
-        Recture[] arr = new Recture[n];
+        ArrayList<Lecture> arr = new ArrayList<>();
+
 
         for(int i = 0; i < n; i++){
             int m = in.nextInt();
             int d = in.nextInt();
 
-            arr[i] = new Recture(m, d);
+            if(max < d){
+                max = d;
+            }
+
+            arr.add(new Lecture(m, d));
         }
 
-        Arrays.sort(arr);
+        Collections.sort(arr);
 
         System.out.println(T.solution(arr, n));
     }
