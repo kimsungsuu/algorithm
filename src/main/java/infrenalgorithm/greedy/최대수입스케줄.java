@@ -40,7 +40,7 @@ public class 최대수입스케줄 {
                 max = pQ.peek().d;
             }
             pQ.poll();
-            if(cnt == )
+//            if(cnt == )
         }
 
         return answer;
