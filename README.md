@@ -17,3 +17,5 @@
 >   - [내가 푼 HashMap, TreeSet 문제들](https://github.com/ksungsu/algorithm/tree/master/src/main/java/infrenalgorithm/section04)
 > - Stack, Queue
 >   - [내가 푼 Stack, Queue 문제들](https://github.com/ksungsu/algorithm/tree/master/src/main/java/infrenalgorithm/section05)
+> - DFS, BFS
+> - Greedy
