@@ -63,5 +63,6 @@ public class 최대수입스케줄강사풀이 {
         Collections.sort(arr);
 
         System.out.println(T.solution(arr, max, n));
+
     }
 }
