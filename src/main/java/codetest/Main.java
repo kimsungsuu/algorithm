@@ -1,16 +1,25 @@
 package codetest;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        Loop1 : for(int i = 2; i <= 9; i++){
-            for(int j = 1; j <= 9; j++){
-                if(j==5) break Loop1;
-                System.out.println(i+"*"+j+"="+i*j);
-            }
-            System.out.println();
+        Map<String, Integer> intMap = new HashMap<>();
+
+        intMap.put("일",1);
+        intMap.put("이",2);
+        intMap.put("삼",3);
+        intMap.put("삼",4);
+        intMap.put("삼",5);
+
+        for(String value : intMap.keySet()){
+            System.out.println(value);
+        }
+        for(Integer value : intMap.values()){
+            System.out.println(value);
         }
     }
 }
