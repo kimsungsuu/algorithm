@@ -57,8 +57,7 @@ public class 원더랜드프림 {
 
         ArrayList<ArrayList<City>> arr = new ArrayList<ArrayList<City>>();
 
-        // 무방향 그래프이므로 n*2로 설정
-        for (int i = 1; i <= n*2; i++) {
+        for (int i = 0; i <= n; i++) {
             arr.add(new ArrayList<City>());
         }
 
