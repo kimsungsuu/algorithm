@@ -2,6 +2,9 @@ package spartajava.calcurator;
 
 public class Calculator {
 
+   private int firstNumber;
+   private int secondNumber;
+
    private AbstractCalculator operation;
 
    public Calculator(AbstractCalculator operation){
@@ -12,10 +15,20 @@ public class Calculator {
        this.operation = operation;
    }
 
-    public int calculate(int a, int b){
+   public void setFirstNumber(int firstNumber){
+       this.firstNumber = firstNumber;
+   }
+
+    public void setSecondNumber(int secondNumber){
+        this.secondNumber = secondNumber;
+    }
+
+
+
+    public int calculate(){
         int answer = 0;
 
-        answer = operation.operate(a, b);
+        answer = operation.operate(this.firstNumber, this.secondNumber);
 
         return answer;
     }

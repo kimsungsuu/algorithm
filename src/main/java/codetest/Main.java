@@ -1,45 +1,46 @@
 package codetest;
 
-import java.util.Random;
-import java.util.Scanner;
+import java.util.HashMap;
 
 public class Main {
-    Random random = new Random(System.currentTimeMillis());
-    Scanner scanner = new Scanner(System.in);
+    public int solution(int[] array) {
+        int answer = 0;
 
-    public void findAnswer() {
+        HashMap<Integer, Integer> map = new HashMap<>();
 
-        int answer = random.nextInt(101);
-        int input = 0;
+        int max = Integer.MIN_VALUE;
+
+        for (int x : array) {
+            map.put(x, map.getOrDefault(x, 0) + 1);
+            if(map.get(x) > max){
+                max = x;
+            }
+        }
 
         int cnt = 0;
 
-        while(true){
-
-            System.out.print("숫자 입력: ");
-
-            input = scanner.nextInt();
-
-            if(answer < input){
-                System.out.println("DOWN");
-            }else if(answer > input){
-                System.out.println("UP");
-            }else{
-                System.out.println("CORRECT");
-                break;
+        for(int x : map.keySet()){
+            if(map.get(x) == map.get(max)){
+                cnt++;
             }
-
-            cnt++;
         }
 
-        System.out.printf("숫자 입력한 횟수 : %d번\n", cnt);
+        if(cnt > 1){
+            return -1;
+        }
 
-        scanner.close();
+        answer = max;
+
+        return answer;
     }
+
 
     public static void main(String[] args) {
         Main T = new Main();
-        T.findAnswer();
+
+        int arr[] = {1, 1, 3, 3, 3, 4};
+
+        System.out.println(T.solution(arr));
     }
 }
 

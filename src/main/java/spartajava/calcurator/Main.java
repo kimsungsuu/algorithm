@@ -4,14 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+        boolean calculateEnded = false;
 
-
-        Calculator calculator = new Calculator(new AddOperation());
-
-        System.out.println(calculator.calculate(10,20));
-
-        calculator.setOperation(new MultiplyOperation());
-        System.out.println(calculator.calculate(10,20));
     }
 }
