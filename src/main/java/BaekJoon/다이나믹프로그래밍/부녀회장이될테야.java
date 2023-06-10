@@ -2,6 +2,7 @@ package BaekJoon.다이나믹프로그래밍;
 
 import java.util.Scanner;
 
+//백준 2775
 public class 부녀회장이될테야 {
     static int[][] dy;
     public static void main(String[] args) {
