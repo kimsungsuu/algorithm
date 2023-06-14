@@ -8,17 +8,23 @@ public class 피보나치수1 {
     static int cntFib = 0;
     static int cntFibonacci = 0;
 
+    // 재귀
     public int fib(int n){
-        cntFib++;
-        if(n == 1 || n == 2) return 1;
-        else return (fib(n-1) + fib(n-2));
+        if(n==1 || n ==2){
+            cntFib++;
+            return 1;
+        }
+        return fib(n-2) + fib(n-1);
     }
 
-    public int fibonacci(int n){
-        cntFibonacci++;
-        if(n == 1 || n == 2) return 1;
-        else{
-            return f[n] = f[n-2] + f[n-1];
+    // 피보나치 재귀
+    public void fibonacci(int n){
+        f[0] = 1;
+        f[1] = 1;
+
+        for(int i = 2; i < n; i++){
+            cntFibonacci++;
+            f[i] = f[i-2] + f[i-1];
         }
     }
 
